@@ -1,0 +1,61 @@
+---
+title: "Problem 1"
+author: "Zicheng Wang"
+date: "2024-09-16"
+output: html_document
+---
+
+Loading the penguins dataset and library ggplot
+```{r setup}
+data("penguins", package = "palmerpenguins")
+library(ggplot2)
+```
+
+Discription of the dataset:  
+```{r}
+rows <- nrow(penguins)
+cols <- ncol(penguins)
+species <- paste(unique(penguins$species), collapse = ", ")
+islands <- paste(unique(penguins$island), collapse = ", ")
+bi_length_min <- min(penguins$bill_length_mm, na.rm = TRUE)
+bi_length_max <- max(penguins$bill_length_mm, na.rm = TRUE)
+bi_depth_min <- min(penguins$bill_depth_mm, na.rm = TRUE)
+bi_depth_max <- max(penguins$bill_depth_mm, na.rm = TRUE)
+fl_length_min <- min(penguins$flipper_length_mm, na.rm = TRUE)
+fl_length_max <- max(penguins$flipper_length_mm, na.rm = TRUE)
+bm_min <- min(penguins$body_mass_g, na.rm = TRUE)
+bm_max <- max(penguins$body_mass_g, na.rm = TRUE)
+means <- mean(penguins$flipper_length_mm, na.rm = TRUE)
+```
+
+The `penguins` dataset consists of measurements of penguins:
+The dataset contains **`r rows`** rows and **`r cols`** columns. Have species, island, sex, bill length, bill depth, flipper length and body mass variables.  
+These penguins came from three different species: **`r species`**.  
+The penguins were studied on three islands: **`r islands`**.  
+Bill length (in mm): ranges from **`r bi_length_min`** to **`r bi_length_max`** mm  
+Bill depth (in mm): ranges from **`r bi_depth_min`** to **`r bi_depth_max`** mm  
+Flipper length (in mm): ranges from **`r fl_length_min`** to **`r fl_length_max`** mm  
+Body mass (in g): ranges from **`r bm_min`** to **`r bm_max`** g  
+The mean flipper length of the penguins is **`r means`** mm.
+
+
+Create scatterplot of Flipper length and bill length by different species
+Using `theme_minimal()` as the theme
+```{r}
+p <- ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+  geom_point() +
+  labs(title = "Flipper Length vs. Bill Length by Species", 
+       x = "Bill Length (mm)", 
+       y = "Flipper Length (mm)") +
+  theme_minimal()
+```
+
+Display the plot
+```{r}
+print(p)
+```
+
+Save the scatterplot to the project directory
+```{r}
+ggsave("Scatterplot_penguins.png", plot = p)
+```
