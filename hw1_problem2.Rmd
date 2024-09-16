@@ -2,7 +2,7 @@
 title: "Problem 2"
 author: "Zicheng Wang"
 date: "2024-09-16"
-output: html_document
+output: pdf_document
 ---
 
 Load necessary packages:
