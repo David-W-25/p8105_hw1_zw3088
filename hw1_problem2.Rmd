@@ -2,7 +2,7 @@
 title: "Problem 2"
 author: "Zicheng Wang"
 date: "2024-09-16"
-output: pdf_document
+output: github_document
 ---
 
 Load necessary packages:
