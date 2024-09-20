@@ -5,12 +5,12 @@ date: "2024-09-16"
 output: github_document
 ---
 
-##Problem 1
+## Problem 1
+
 Loading the penguins dataset and necessary packeges for the problems
 ```{r setup}
 data("penguins", package = "palmerpenguins")
 library(tidyverse)
-library(ggplot2)
 ```
 
 Discription of the dataset:  
@@ -62,7 +62,7 @@ Save the scatterplot to the project directory
 ggsave("Scatterplot_penguins.png", plot = p)
 ```
 
-##Problem 2
+## Problem 2
 
 Create a data frame:
 ```{r df_create}

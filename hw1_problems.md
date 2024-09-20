@@ -3,8 +3,9 @@ Problems in Homework1
 Zicheng Wang
 2024-09-16
 
-\##Problem 1 Loading the penguins dataset and necessary packeges for the
-problems
+## Problem 1
+
+Loading the penguins dataset and necessary packeges for the problems
 
 ``` r
 data("penguins", package = "palmerpenguins")
@@ -21,10 +22,6 @@ library(tidyverse)
     ## ✖ dplyr::filter() masks stats::filter()
     ## ✖ dplyr::lag()    masks stats::lag()
     ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-
-``` r
-library(ggplot2)
-```
 
 Discription of the dataset:
 
@@ -91,7 +88,7 @@ ggsave("Scatterplot_penguins.png", plot = p)
     ## Warning: Removed 2 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-\##Problem 2
+## Problem 2
 
 Create a data frame:
 
@@ -113,16 +110,16 @@ print(df)
     ## # A tibble: 10 × 4
     ##    sample_normal sample_logic sample_char sample_level
     ##            <dbl> <lgl>        <chr>       <fct>       
-    ##  1        0.152  TRUE         o           Level1      
-    ##  2       -2.49   FALSE        h           Level3      
-    ##  3        0.0692 TRUE         e           Level2      
-    ##  4        1.52   TRUE         a           Level3      
-    ##  5       -0.240  FALSE        p           Level3      
-    ##  6        0.355  TRUE         d           Level2      
-    ##  7       -1.34   FALSE        f           Level3      
-    ##  8        0.236  TRUE         j           Level2      
-    ##  9        1.27   TRUE         m           Level2      
-    ## 10       -0.231  FALSE        q           Level1
+    ##  1        0.884  TRUE         x           Level2      
+    ##  2       -0.952  FALSE        k           Level2      
+    ##  3       -1.05   FALSE        w           Level1      
+    ##  4        0.0939 TRUE         m           Level1      
+    ##  5       -0.822  FALSE        u           Level2      
+    ##  6        0.635  TRUE         a           Level1      
+    ##  7        0.256  TRUE         b           Level2      
+    ##  8       -0.261  FALSE        p           Level2      
+    ##  9       -0.183  FALSE        v           Level3      
+    ## 10        0.153  TRUE         q           Level2
 
 Calculate means of each variable in the data frame:
 
@@ -130,13 +127,13 @@ Calculate means of each variable in the data frame:
 mean(df %>% pull(sample_normal))
 ```
 
-    ## [1] -0.0707383
+    ## [1] -0.1241594
 
 ``` r
 mean(df %>% pull(sample_logic))
 ```
 
-    ## [1] 0.6
+    ## [1] 0.5
 
 ``` r
 mean(df %>% pull(sample_char))
